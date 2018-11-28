@@ -5,7 +5,7 @@ OSG batch kedua kali ini bertema tentang pemrograman Android Basic, dimana diper
 
 ## Sample Code Pertemuan 5
 Pertemuan 5 di OSG2 Android Basic membahas tentang REST API CLIENT menggunakan Retrofit dan GSON. Sample code ini berisi:
-- Impelementasi Retrofit & GSON
+- Implementasi Retrofit & GSON
 - Menampilkan data dari API
 
 ## Cara mendaftar Online Study Group
