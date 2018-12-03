@@ -3,10 +3,10 @@ package osg.id.android_restapi.model;
 import com.google.gson.annotations.SerializedName;
 
 
-public class MyModel {
+public class Users {
 
 
-    public MyModel() {
+    public Users() {
     }
 
     @SerializedName("company")

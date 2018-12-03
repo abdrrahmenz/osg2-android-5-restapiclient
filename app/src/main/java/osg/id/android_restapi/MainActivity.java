@@ -8,26 +8,22 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Adapter;
-import android.widget.TextView;
-
-import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import osg.id.android_restapi.adapter.MyAdapter;
-import osg.id.android_restapi.model.MyModel;
+import osg.id.android_restapi.adapter.ListUserAdapter;
+import osg.id.android_restapi.model.Users;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements MyAdapter.onItemClickListener {
+public class MainActivity extends AppCompatActivity implements ListUserAdapter.onItemClickListener {
 
     private ApiInterface apiInterface;
     private RecyclerView recyclerView;
-    private MyAdapter adapter;
-    private List<MyModel> data = new ArrayList<>();
+    private ListUserAdapter adapter;
+    private List<Users> data = new ArrayList<>();
     private ProgressDialog progressDoalog;
 
     @Override
@@ -38,17 +34,17 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.onItemC
         initAdapter();
         showProgress();
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<List<MyModel>> call = apiInterface.getListUser();
-        call.enqueue(new Callback<List<MyModel>>() {
+        Call<List<Users>> call = apiInterface.getListUser();
+        call.enqueue(new Callback<List<Users>>() {
             @Override
-            public void onResponse(Call<List<MyModel>> call, Response<List<MyModel>> response) {
+            public void onResponse(Call<List<Users>> call, Response<List<Users>> response) {
                 data.addAll(response.body());
                 adapter.notifyDataSetChanged();
                 progressDoalog.dismiss();
             }
 
             @Override
-            public void onFailure(Call<List<MyModel>> call, Throwable t) {
+            public void onFailure(Call<List<Users>> call, Throwable t) {
                 progressDoalog.dismiss();
                 Log.d("RESPONSE", "ERROR");
                 t.printStackTrace();
@@ -64,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.onItemC
     }
 
     private void initAdapter() {
-        adapter = new MyAdapter(data, this);
+        adapter = new ListUserAdapter(data, this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -72,8 +68,9 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.onItemC
     }
 
     @Override
-    public void onItemClick() {
+    public void onItemClick(Users data) {
         Intent intent = new Intent(this, DetailUserActivity.class);
+        intent.putExtra("id_users", data.id);
         startActivity(intent);
     }
 }

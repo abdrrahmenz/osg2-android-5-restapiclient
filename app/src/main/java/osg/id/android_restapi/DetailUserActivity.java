@@ -3,13 +3,10 @@ package osg.id.android_restapi;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
-import osg.id.android_restapi.model.MyModel;
+import osg.id.android_restapi.model.Users;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,11 +17,13 @@ public class DetailUserActivity extends AppCompatActivity {
     private TextView txtCompanyName, txtCatchPhrase, txtBs;
     private ApiInterface apiInterface;
     private ProgressDialog progressDoalog;
+    private int idUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_user);
+        idUser = getIntent().getIntExtra("id_users", 0);
 
         txtName = (TextView) findViewById(R.id.detail_name);
         txtUsername = (TextView) findViewById(R.id.detail_user_name);
@@ -42,17 +41,17 @@ public class DetailUserActivity extends AppCompatActivity {
         //show progress
         showProgress();
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<MyModel> call = apiInterface.getDetailUser();
-        call.enqueue(new Callback<MyModel>() {
+        Call<Users> call = apiInterface.getDetailUser(idUser);
+        call.enqueue(new Callback<Users>() {
             @Override
-            public void onResponse(Call<MyModel> call, Response<MyModel> response) {
+            public void onResponse(Call<Users> call, Response<Users> response) {
                 progressDoalog.dismiss();
                 setValue(response.body());
 
             }
 
             @Override
-            public void onFailure(Call<MyModel> call, Throwable t) {
+            public void onFailure(Call<Users> call, Throwable t) {
                 progressDoalog.dismiss();
                 Toast.makeText(DetailUserActivity.this, "Error Get Data Detail", Toast.LENGTH_SHORT).show();
                 t.printStackTrace();
@@ -62,7 +61,7 @@ public class DetailUserActivity extends AppCompatActivity {
     }
 
 
-    private void setValue(MyModel data) {
+    private void setValue(Users data) {
         txtName.setText(data.name);
         txtUsername.setText(data.username);
         txtEmail.setText(data.email);

@@ -5,25 +5,24 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import osg.id.android_restapi.R;
-import osg.id.android_restapi.model.MyModel;
+import osg.id.android_restapi.model.Users;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.MyViewHolder> {
 
-    private List<MyModel> listData;
+    private List<Users> listData;
     private final onItemClickListener listener;
 
 
-    public interface onItemClickListener{
-        void onItemClick();
+    public interface onItemClickListener {
+        void onItemClick(Users users);
     }
 
-    public MyAdapter(List<MyModel> listData, onItemClickListener listener) {
+    public ListUserAdapter(List<Users> listData, onItemClickListener listener) {
         this.listData = listData;
         this.listener = listener;
     }
@@ -37,10 +36,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-                MyModel myModel = listData.get(i);
-                myViewHolder.itemName.setText(myModel.name);
-                myViewHolder.itemUsername.setText(myModel.username);
-                myViewHolder.itemEmail.setText(myModel.email);
+        Users myModel = listData.get(i);
+        myViewHolder.bind(myModel, listener);
     }
 
     @Override
@@ -59,10 +56,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             itemUsername = (TextView) itemView.findViewById(R.id.item_username);
             itemEmail = (TextView) itemView.findViewById(R.id.item_email);
 
+        }
+
+
+        private void bind(final Users data, final onItemClickListener listener) {
+            itemName.setText(data.name);
+            itemUsername.setText(data.username);
+            itemEmail.setText(data.email);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onItemClick();
+                    listener.onItemClick(data);
                 }
             });
         }
