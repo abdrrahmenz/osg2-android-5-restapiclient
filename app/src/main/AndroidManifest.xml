@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="osg.id.android_restapi">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,6 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DetailUserActivity"></activity>
     </application>
 
 </manifest>

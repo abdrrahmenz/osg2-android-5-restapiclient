@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Name"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Teddy Supangkat" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="UserName"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Teds" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Email"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="teddy@gits.co.id" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/holo_orange_dark"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="ADDRESS"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Street"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_street"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Sukabirus" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="suite"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_suite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="suite" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="city"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Gwenborough" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="zipcode"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_zipcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0929922" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Phone"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="092992dfdf2" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Website"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="092992dfdf2" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/holo_orange_dark"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="COMPANY"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Name"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_companyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="092992dfdf2" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="CathPharase"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_chatPharase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="092992dfdf2" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="bs"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_bs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="092992dfdf2" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
