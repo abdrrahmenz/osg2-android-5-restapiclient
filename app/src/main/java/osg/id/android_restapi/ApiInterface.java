@@ -12,9 +12,6 @@ public interface ApiInterface {
     @GET("/users")
     Call<List<Users>> getListUser();
 
-    @GET("/users/{id_users}")
-    Call<Users> getDetailUser(@Path("id_users") int idUser);
-
 }
 
 
