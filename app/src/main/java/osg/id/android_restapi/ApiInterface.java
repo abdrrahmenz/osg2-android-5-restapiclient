@@ -12,6 +12,9 @@ public interface ApiInterface {
     @GET("/users")
     Call<List<Users>> getListUser();
 
+    @GET("/users/{id}")
+    Call<Users> getUser(@Path("id") Integer id);
+
 }
 
 

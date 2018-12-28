@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity implements ListUserAdapter.o
 
     private ApiInterface apiInterface;
     private RecyclerView recyclerView;
-    private ListUserAdapter adapter;
     private List<Users> data = new ArrayList<>();
     private ProgressDialog progressDoalog;
+    private ListUserAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
